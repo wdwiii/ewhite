@@ -103,173 +103,113 @@ textarea {
 
 /* Global Styles */
 
-    html, body {
-        background: #000000;
+html, body {
+    /* background: #000000;
+    color: #ffffff; */
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+}
+
+
+header .content-wrapper,
+footer .content-wrapper{
+    width: 100%;
+}
+
+/* Global Typography */
+
+p {
+    font-size: 1em;
+    margin: 0;
+}
+
+
+
+/* -------------------------------
+            Header
+---------------------------------*/
+
+header {
+    background: #000000;
+    box-sizing: border-box;
+    padding: 0 30px;
+    position: absolute;
+        top: 0;
+        left: 0;
+    width: 100%;
+
+}
+
+.logo-wrapper {
+    float: left;
+}
+
+.ewhite-wordmark {
+    color: #ffffff;
+    font-family: 'Romanesco', cursive;
+    font-size: 1.5em;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    position: absolute;
+        top: 50px;
+        left: -100%; /* This postioning is the first part of the toggle effect. 'Left: -100%' will completely remove the element from view on the screen */
+    height: calc(100vh - 50px); /* Creates a full page nav, removing 50px to account for the header, and places nav just below the header bar. */
+    width: 100%;
+    transition: 0.6s;
+}
+
+header nav ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    list-style: none;
+}
+
+header nav ul li a {
+    border-bottom: 1px solid white;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    text-decoration: none;
+
+}
+
+    header nav ul li a:hover,
+    header nav ul li a:active {
         color: #ffffff;
-        font-size: 16px;
-        height: 100%;
-        width: 100%;
+        background: #948503;
     }
 
-    body {
-        display: flex;
-            flex-flow: row wrap;
+    header nav.active {
+        left: 0; /* This postioning is the second part of the toggle effect. 'Left: 0' will bring the element in full view on the screen */
     }
 
-    header,
-    footer {
-        display: flex;
-            align-items: center;
-            justify-content: center;
-        background-color: #000000;
-        height: 7.5%;
-        width: 100%;
-    }
-
-    main {
-        display: flex;
-            flex-flow: row wrap;
-        height: 85%;
-        width: 100%;
-    }
-
-    section {
-        display: flex;
-        width: 100%;
-    }
-
-    header .content-wrapper,
-    footer .content-wrapper{
-        width: 90%;
-    }
-
-    /* Global Typography */
-
-    p {
-        font-size: 1em;
-        margin: 0;
-    }
-
-
-/* The following line of code controls the color of links during clicks, mouseovers, etc. */
-
-    /* unvisited link */
-    a:link {
-      color: #FAFAFA;
-    }
-    /* visited link */
-    a:visited {
-      color: #FAFAFA;
-    }
-    /* mouse over link */
-    a:hover {
-      color: #948500;
-    }
-    /* selected link */
-    a:active {
-      color: #948500;
-    }
-/* ------------------------------- */
-
-    /* ----------------------------------------------*/
-    /* Header */
-    header .content-wrapper{
-        display: flex;
-            flex-flow: row nowrap;
-    }
-    header div {
-        width: 50%;
-    }
-
-    .ewhite-wordmark {
-        font-family: 'Romanesco', cursive;
-        font-size: 1.7em;
-    }
-
-    .topnav {
-        display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        width: 50%;
-        overflow: hidden;
-        position: relative;
-      }
-
-    /* Hide the links inside the navigation menu (except for logo/home) */
-    .topnav #menuitems {
-      display: none;
-    }
-
-/* CSS styles to create 3-line menu bar in the nav area */
-    .menu-bars {
-      display: inline-block;
-      cursor: pointer;
-      width: 35px;
-    }
-
-    .bar1, .bar2, .bar3 {
-      width: 35px;
-      height: 5px;
-      background-color: #ffffff;
-      margin: 6px 0;
-      transition: 0.4s;
-    }
-
-    /* Rotate first bar */
-    .change .bar1 {
-      -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-      transform: rotate(-45deg) translate(-9px, 6px) ;
-    }
-
-    /* Fade out the second bar */
-    .change .bar2 {
-      opacity: 0;
-    }
-
-    /* Rotate last bar */
-    .change .bar3 {
-      -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-      transform: rotate(45deg) translate(-8px, -8px) ;
-    }
-        /* Nav menu bar ends */
+    .menu-toggle {
+        color: #ffffff;
+        cursor: pointer;
+        display: block;
+        float: right;
+        font-size: ;
+        line-height: 50px;
+}
 
 
 
-    nav i {
-        font-size: 1.3em;
-    }
 
-    /* Main Section */
-    section .content-wrapper{
-        height: 100%;
-        width: 100%;
-        background-color: #000000;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
-
-    .top-third .content-wrapper {
-        background-image: url('../img/ewhite1.png');
-    }
-
-    .middle-third .content-wrapper {
-        background-image: url('../img/ewhite2.png');
-    }
-
-    .bottom-third .content-wrapper {
-        background-image: url('../img/ewhite3.png');
-    }
-
-    /* Footer */
-    footer i {
-        font-size: 2em;
-    }
-
-    .footer-content {
-        display: flex;
-            justify-content: space-around;
-    }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -369,6 +309,34 @@ textarea {
   /* Style adjustments for high resolution devices */
 }
 
+@media (min-width: 1200px) {
+    /* Header */
+    header {
+        padding: 0 5%;
+    }
+
+    header nav {
+        display: block;
+        position: revert;
+        height: 100%;
+        width: 550px;
+    }
+
+    header nav ul {
+        display: flex;
+    }
+
+    header nav ul li a {
+        border-bottom: none;
+        padding: 0 15px;
+        font-weight: normal;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+}
 /* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
