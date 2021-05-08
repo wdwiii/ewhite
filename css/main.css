@@ -101,175 +101,500 @@ textarea {
 
 
 
-/* Global Styles */
+/*===============
+Global Styles
+===============*/
 
-    html, body {
-        background: #000000;
-        color: #ffffff;
-        font-size: 16px;
+html, body {
+    background: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+}
+
+header,
+footer {
+    display: flex;
+        align-items: center;
+        justify-content: center;
+    background-color: #000000;
+    width: 100%;
+}
+
+main {
+    display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+    height: 81.5%; /* height = [total hight of viewport - (header ht + footer ht)]*/
+    width: 100%;
+}
+
+
+
+main.page-content {
+        transition: 0.6s; /*for smooth transition during menu toggle function*/
+}
+
+section {
+    display: flex;
+    width: 100%;
+}
+
+
+/* Global Typography */
+p,
+a,
+h1,
+h2,
+li  {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-variant: small-caps;
+    font-weight: normal;
+    letter-spacing: 5px;
+    margin: 7px 0;
+}
+
+p {
+    font-size: 1em;
+    margin: 0;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following line of code controls the color of links during clicks, mouseovers, etc.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+a {
+    text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: #FAFAFA;
+}
+/* visited link */
+a:visited {
+  color: #FAFAFA;
+}
+/* mouse over link */
+a:hover {
+  color: #948500;
+}
+/* selected link */
+a:active {
+  color: #948500;
+}
+/* ---------------------------------------------------------------------------------- */
+img {
+    width: 100%;
+}
+
+.content-wrapper {
+    display: flex;
+}
+
+#pageContent {
+    transition: 0.8s;
+    width: 90%;
+}
+/* -------------------------------
+            Header
+---------------------------------*/
+
+header {
+    align-self: flex-start;
+    background: #000000;
+    box-sizing: border-box;
+    height: 7.5%;
+    padding: 0 30px;
+}
+
+.header-content {
+    display: flex;
+        align-items: center;
+        justify-content: space-between;
+    width: inherit;
+}
+
+.logo-wrapper {
+    float: left;
+}
+
+.ewhite-wordmark {
+    color: #ffffff;
+    font-family: 'Romanesco', cursive;
+    font-size: 5vmax;
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+}
+
+header .sidenav {
+    background: rgb(0 0 0 / 0%);
+    height: 81.5vh;
+    width: 0;
+    position: fixed;
+        z-index: 1;
+        top: 7.5%;
+        left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+header .sidenav ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header .sidenav ul li {
+    list-style: none;
+}
+
+header .sidenav a {
+    border-bottom: 1px solid white;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a:active {
+    color: #ffffff;
+    background: #350047;
+}
+
+
+header nav.active {
+    left: 0; /* This postioning is the second part of the toggle effect. 'Left: 0' will bring the nav in full view on the screen */
+}
+
+.bio-content div.active {
+    position: absolute;
+    align-self: center;
+    left: 100%;
+     /* This postioning is the third part of the toggle effect. 'right: -100 will remove the page content from view on the screen */
+}
+
+#menuToggle {
+    display: block;
+}
+
+#menuToggle,
+#closeBtn {
+    color: #ffffff;
+    cursor: pointer;
+    float: right;
+    font-size: 1.5em;
+    line-height: 50px;
+}
+
+#closeBtn {
+    display: none;
+}
+
+header .fas,
+header .fa {
+    font-size: 1em
+}
+
+/* =======================
+        Footer
+========================== */
+footer {
+    align-self: flex-end;
+    flex-flow: row wrap;
+    height: 11%;
+}
+
+footer i {
+    font-size: 1.5em;
+}
+
+.footer-content {
+    display: flex;
+        justify-content: space-around;
+    width: 85%;
+}
+
+.ww-link {
+    font-size: 0.75em;
+}
+
+.ww-link a {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.ww-link,
+.ww-link a,
+.ww-link a:visited {
+    color: #5f5f5f;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    HOME PAGE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* =======================
+        Header
+========================== */
+
+#homepage header .sidenav {
+    background: rgb(0 0 0 / 75%);
+}
+
+/* =======================
+        Main Section
+========================== */
+
+section .content-wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.top-third .content-wrapper {
+    background-image: url('../img/ewhite-m1.png');
+}
+
+.middle-third .content-wrapper {
+    background-image: url('../img/ewhite-m2.png');
+}
+
+.bottom-third .content-wrapper {
+    background-image: url('../img/ewhite-m3.png');
+}
+
+/* .top-third .content-wrapper {
+    background-image: url('../img/ewhite-web.jpg');
+}
+
+.middle-third {
+    display: none;
+}
+
+.bottom-third {
+    display: none;
+} */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    BIOGRAPHY #bio-content
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* =======================
+        Main Section
+========================== */
+
+
+#bioPage main {
+    background: rgba(0, 0, 0, .75) url('../bio/img/ewhite-profile.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: darken;
+    /* DISPLAY: FLEX */
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    /* ------------------- */
+    overflow: scroll;
+
+}
+
+
+#bioPage #pageContent {
+    flex-flow: row wrap;
+}
+
+
+.bioContent figure {
+    display: none;
+}
+
+.bioContent p {
+    margin-bottom: 15px;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    DISCOGRAPHY #discContent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.discContent {
+    background: url('../disc/img/joyceg-vinyl.jpg') rgba(0, 0, 0, 0.5) 0 0;
+    background-blend-mode: darken;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+        justify-content: center;
+    transition: 0.6s;
+}
+
+.discContent #pageContent {
         height: 100%;
-        width: 100%;
-    }
+        flex-direction: column;
 
-    body {
-        display: flex;
-            flex-flow: row wrap;
-    }
+}
 
-    header,
-    footer {
-        display: flex;
-            align-items: center;
-            justify-content: center;
-        background-color: #000000;
-        height: 7.5%;
-        width: 100%;
-    }
+#thumbnailContainer {
+    display: flex;
+        flex-flow: row wrap;
+    height: 100%;
+    overflow: scroll;
+    transition: 0.4s;
+}
 
-    main {
-        display: flex;
-            flex-flow: row wrap;
-        height: 85%;
-        width: 100%;
-    }
+.cover-art {
+    background: white;
+    background-size: cover;
+    flex-basis: calc(50% - 10px);
+    margin: 5px;
+}
 
-    section {
-        display: flex;
-        width: 100%;
-    }
+.cover-art:after{
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
 
-    header .content-wrapper,
-    footer .content-wrapper{
-        width: 90%;
-    }
+.ca1 {
+    background-image: url('../disc/img/combs-holdin-me.jpeg');
+}
 
-    /* Global Typography */
+.ca2 {
+    background-image: url('../disc/img/asapferg-hectic.jpeg');
+}
 
-    p {
-        font-size: 1em;
-        margin: 0;
-    }
+.ca3 {
+    background-image: url('../disc/img/combs-on-me.jpg');
+}
 
+.ca4 {
+    background-image: url('../disc/img/combs-basement.jpeg');
+}
 
-/* The following line of code controls the color of links during clicks, mouseovers, etc. */
+.ca5 {
+    background-image: url('../disc/img/3vm-biscayne.jpeg');
+}
 
-    /* unvisited link */
-    a:link {
-      color: #FAFAFA;
-    }
-    /* visited link */
-    a:visited {
-      color: #FAFAFA;
-    }
-    /* mouse over link */
-    a:hover {
-      color: #948500;
-    }
-    /* selected link */
-    a:active {
-      color: #948500;
-    }
-/* ------------------------------- */
+.ca6 {
+    background-image: url('../disc/img/3vm-been-gvng.jpeg');
+}
 
-    /* ----------------------------------------------*/
-    /* Header */
-    header .content-wrapper{
-        display: flex;
-            flex-flow: row nowrap;
-    }
-    header div {
-        width: 50%;
-    }
+.ca7 {
+    background-image: url('../disc/img/quincy-youre-crazy.jpeg');
+}
 
-    .ewhite-wordmark {
-        font-family: 'Romanesco', cursive;
-        font-size: 1.7em;
-    }
+.ca8 {
+    background-image: url('');
+    display: none;
+}
 
-    .topnav {
-        display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        width: 50%;
-        overflow: hidden;
-        position: relative;
-      }
-
-    /* Hide the links inside the navigation menu (except for logo/home) */
-    .topnav #menuitems {
-      display: none;
-    }
-
-/* CSS styles to create 3-line menu bar in the nav area */
-    .menu-bars {
-      display: inline-block;
-      cursor: pointer;
-      width: 35px;
-    }
-
-    .bar1, .bar2, .bar3 {
-      width: 35px;
-      height: 5px;
-      background-color: #ffffff;
-      margin: 6px 0;
-      transition: 0.4s;
-    }
-
-    /* Rotate first bar */
-    .change .bar1 {
-      -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-      transform: rotate(-45deg) translate(-9px, 6px) ;
-    }
-
-    /* Fade out the second bar */
-    .change .bar2 {
-      opacity: 0;
-    }
-
-    /* Rotate last bar */
-    .change .bar3 {
-      -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-      transform: rotate(45deg) translate(-8px, -8px) ;
-    }
-        /* Nav menu bar ends */
+.ca9 {
+    background-image: url('');
+    display: none;
+}
 
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    SERVICES #serviceContent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-    nav i {
-        font-size: 1.3em;
-    }
+.serviceContent {
+    background: url('../services/img/psheldon-unsplash.jpg') no-repeat 0 0 rgba(0, 0, 0, 0.75);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: bottom;
+    justify-content: center;
+    overflow: scroll;
+}
 
-    /* Main Section */
-    section .content-wrapper{
-        height: 100%;
-        width: 100%;
-        background-color: #000000;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
+.serviceContent #pageContent {
+    flex-direction: column;
+    margin-bottom: 45px;
+}
 
-    .top-third .content-wrapper {
-        background-image: url('../img/ewhite1.png');
-    }
+.serviceContent h2 {
+    font-weight: normal;
+    margin: 15px 0 10px;
+}
 
-    .middle-third .content-wrapper {
-        background-image: url('../img/ewhite2.png');
-    }
 
-    .bottom-third .content-wrapper {
-        background-image: url('../img/ewhite3.png');
-    }
+.column {
+    display: flex;
+    flex-direction: column;
+}
 
-    /* Footer */
-    footer i {
-        font-size: 2em;
-    }
+.music-service-list {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    margin: 0;
+    align-self: center;
+    padding-left: 10px;
+    width: 100%;
+}
 
-    .footer-content {
-        display: flex;
-            justify-content: space-around;
-    }
+.music-service-list li {
+    list-style-position: inside;
+    flex-basis: 50%;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    CONTACT #contactContent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#contactPage #pageContent {
+    align-items: center;
+    flex-direction: column;
+    height: 95%;
+    overflow: scroll;
+    padding-top: 10px;
+}
+
+#contactPage #mainContent {
+    background: url('../contact/img/IMG_4839.jpg') rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+}
+
+#googleForm{
+    transition: 0.4s;
+}
+
+/* #ff-compose {
+    height: 90%;
+}
+
+.freebirdFormviewerViewReceiptText {
+    color: #ffffff;
+} */
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -357,9 +682,286 @@ textarea {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media only screen and (min-width: 768px) {
+     /* Style adjustments for laoptop/destop viewports */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+     /*===============
+     Global Styles
+     ===============*/
+
+
+     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     The following line of code controls the color of links during clicks, mouseovers, etc.
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+    /* unvisited link */
+    a:link {
+        color: #FAFAFA;
+    }
+    /* visited link */
+    a:visited {
+        color: #FAFAFA;
+    }
+    /* mouse over link */
+    a:hover {
+        color: #7302a4;
+    }
+    /* selected link */
+    a:active {
+        color: #7302a4;
+    }
+
+     /* -------------------------------
+                 Header
+     ---------------------------------*/
+
+    header .sidenav {
+        height: 81vh;
+    }
+
+    header .sidenav a {
+        font-size: 1.7em;
+        height: 75px;
+        line-height: 75px;
+    }
+
+    .ewhite-wordmark {
+        font-size: 4vmax;
+    }
+     /* -------------------------------
+                 Main Section
+     ---------------------------------*/
+     main {
+         height: 81vh;
+     }
+
+
+     /* -------------------------------
+                  Footer
+      ---------------------------------*/
+
+     footer {
+         flex-flow: row wrap;
+         height: 85px;
+     }
+
+     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                         HOMEPAGE #homepage
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+          /* .top-third .content-wrapper {
+              background-image: url('../img/ewhite-tab.jpeg');
+          }
+
+          .middle-third {
+              display: none;
+          }
+
+          .bottom-third {
+              display: none;
+          } */
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        BIOGRAPHY #bioPage
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    /* =======================
+            Main Section
+    ========================== */
+
+
+    #bioPage article p {
+        font-size: 1em;
+    }
+
+    #bioPage .bioContent {
+        background-position: top;
+        height: 78vh;
+    }
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        DISCOGRAPHY #discContent
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    .cover-art {
+        flex-basis: calc(33.33% - 10px);
+    }
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        SERVICES #serviceContent
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    .music-service-list li {
+        list-style-position: inside;
+        flex-basis: 33.33%;
+
+}
+
+
+
+
+
+@media only screen and (min-width: 1200px) {
+  /* Style adjustments for laoptop/destop viewports */
+
+
+  /* -------------------------------
+              Header
+  ---------------------------------*/
+
+    header {
+        padding: 0 5%;
+    }
+
+
+    header .sidenav {
+        background: #000;
+        display: block;
+        position: revert;
+        height: auto;
+        width: auto;
+    }
+    #bioPage header .sidenav {
+        background: #000000;
+    }
+
+    header .sidenav ul {
+        display: flex;
+    }
+
+    header .sidenav ul li a {
+        border-bottom: none;
+        padding: 0 15px;
+        font-size: 1em;
+        font-weight: normal;
+        height: auto;
+        line-height: revert;
+    }
+
+    header nav ul li a:hover,
+    header nav ul li a.active {
+            background: none;
+            text-decoration: underline solid #ffffff 2px;
+        }
+
+    #menuToggle {
+        display: none;
+    }
+
+    /* -------------------------------
+                Main
+    ---------------------------------*/
+
+    main {
+      height: 78vh;
+    }
+
+    /* -------------------------------
+                Footer
+    ---------------------------------*/
+
+    .ww-link {
+        flex-basis: 20%;
+    }
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        HOMEPAGE #homepage
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+        #homepage header nav ul li a:hover,
+        #homepage header nav ul li a.active {
+        background: none;
+        text-decoration: underline solid #7302a4 2px;
+    }
+
+    /* .top-third .content-wrapper {
+        background-image: url('../img/ewhite-web.jpg');
+    } */
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        BIOGRAPHY #bioPage
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+        #bioPage #pageContent {
+            align-items: center;
+            flex-grow: 1;
+            justify-content: space-around;
+        }
+
+
+        #bioPage article {
+            align-self: flex-start;
+            width: 55%;
+        }
+
+        #bioPage figure {
+            background: url(../bio/img/ewhite-profile.jpeg) black;
+            background-position: center;
+            background-size: cover;
+            border: white solid 2px;
+            display: inline-block;
+            flex-basis: 30%;
+            height: 90%;
+            margin: 0;
+        }
+
+        #bioPage h1 {
+            font-size: 3em;
+            letter-spacing: 10px;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        #bioPage article p {
+            font-size: 1.1em;
+        }
+
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            DISCOGRAPHY #discContent
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+        .cover-art {
+            flex-basis: calc(25% - 10px);
+        }
+
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            SERVICES #serviceContent
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+        .serviceContent #pageContent {
+            margin-bottom: 0;
+        }
+
+        .music-service-list li {
+            flex-basis: 100%;
+        }
+
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                            CONTACT #contactContent
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+        #contactPage header nav ul li a:hover,
+        #contactPage header nav ul li a.active {
+            background: none;
+            text-decoration: underline solid #6a030b 2px;
+        }
+
 }
 
 @media print,

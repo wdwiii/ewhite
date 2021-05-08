@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Get Branded Music</title>
+  <title>Evan White | Music Producer & Engineer</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,28 +22,33 @@
 
   <meta name="theme-color" content="#fafafa">
   <script src="https://kit.fontawesome.com/cf08a85db8.js" crossorigin="anonymous"></script>
-  <script src="js\.js"></script>
 </head>
 
-<body>
+<body id="homepage">
     <header>
-        <div class="logo-wrapper">
-            <!-- ewhite-wordmark div uses Romanesco type from Google fonts -->
-            <h1 class="ewhite-wordmark">E. White The Brand</h1>
-        </div>
-        <nav>
-        <!-- Nav will use the Bars icon from awsomefonts. Rest of the nav options will be revealed/hidden on the click of the bars-->
-            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Biography</a></li>
-                <li><a href="#">Discography</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="menu-toggle">
-            <i class="fas fa-bars" aria-hidden="true"></i>
+        <div class="header-content">
+            <div class="logo-wrapper">
+                <!-- ewhite-wordmark div uses Romanesco type from Google fonts -->
+                <p><span class="ewhite-wordmark">E. White The Brand</span></p>
+            </div>
+            <nav id="mySidenav" class="sidenav">
+            <!-- Nav will use the Bars icon from awsomefonts. Rest of the nav options will be revealed/hidden on the click of the bars-->
+                <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="bio/index.html">Biography</a></li>
+                    <li><a href="disc/index.html">Discography</a></li>
+                    <li><a href="services/index.html">Services</a></li>
+                    <li><a href="contact/index.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div onclick="openNav()" id="menuToggle">
+                <i class="fas fa-bars" id="menuBar" aria-hidden="true"></i>
+            </div>
+            <div id="closeBtn" onclick="closeNav()">
+                <!-- <a href="javascript:void(0)">&times;</a> -->
+                <i class="fas fa-times"></i>
+            </div>
         </div>
     </header>
 
@@ -64,19 +69,21 @@
     </main>
 
     <footer>
-        <div class="content-wrapper">
-            <div class="footer-content"> <!-- These are the links & awesomefont icons for the footer -->
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-twitter"></i></a>
-                <a href=""><i class="fab fa-spotify"></i></a>
-                <a href=""><i class="fab fa-soundcloud"></i></a>
-                <a href=""><i class="fas fa-at"></i></a>
-            </div>
+        <div class="footer-content"> <!-- These are the links & awesomefont icons for the footer -->
+            <a href="https://www.instagram.com/ewhitethebrand/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-spotify"></i></a>
+            <a href=""><i class="fab fa-soundcloud"></i></a>
+            <a href=""><i class="fas fa-at"></i></a>
+        </div>
+        <div class="ww-link">
+            <p>Website created by <a href="https://williewhitfield.com/">WillieWhitfield.com</a></p>
         </div>
     </footer>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
